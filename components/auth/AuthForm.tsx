@@ -79,8 +79,8 @@ export function AuthForm() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-block mb-4 p-3 rounded-2xl bg-glass-dark border border-glass-border shadow-glow"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-glow flex items-center justify-center">
-              <span className="text-white font-bold text-xl">T</span>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden bg-black/20">
+              <img src="/logo.png" alt="Taskify Logo" className="w-full h-full object-cover" />
             </div>
           </motion.div>
           <h1 className="text-3xl font-bold text-white mb-2 text-glow">Welcome to Taskify</h1>

@@ -89,8 +89,8 @@ export function Sidebar() {
       >
         <div className="p-6">
           <Link href="/dashboard" className="flex items-center group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-glow flex items-center justify-center mr-3 shadow-glow transition-transform group-hover:scale-105">
-              <span className="text-white font-bold text-xl">T</span>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center mr-3 shadow-glow transition-transform group-hover:scale-105 overflow-hidden bg-black/20">
+              <img src="/logo.png" alt="Taskify Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Taskify</span>
           </Link>
@@ -119,13 +119,6 @@ export function Sidebar() {
             <span className="font-medium">Log Out</span>
           </button>
 
-          <div className="mt-4 p-4 rounded-2xl bg-black/5 dark:bg-black/40 border border-gray-200 dark:border-glass-border flex items-center">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-neon-purple to-neon-blue flex-shrink-0" />
-            <div className="ml-3 overflow-hidden">
-              <p className="text-sm font-medium text-gray-900 dark:text-white truncate">Arpit</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 truncate">Premium Plan</p>
-            </div>
-          </div>
         </div>
       </motion.aside>
 
