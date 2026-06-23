@@ -370,7 +370,7 @@ export default function FocusPage() {
           {/* Minutes Flip Card */}
           <div className="flex flex-col items-center">
             <div 
-              className="relative bg-[#111] border border-gray-800 rounded-xl overflow-hidden shadow-2xl w-32 h-40 md:w-40 md:h-48 flex items-center justify-center"
+              className="relative bg-[#111] border border-gray-800 rounded-xl overflow-hidden shadow-2xl w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-48 flex items-center justify-center"
               style={{ perspective: 1000 }}
             >
               <AnimatePresence mode="popLayout">
@@ -380,7 +380,7 @@ export default function FocusPage() {
                   animate={{ rotateX: 0, y: 0, opacity: 1 }}
                   exit={{ rotateX: 90, y: 20, opacity: 0 }}
                   transition={{ duration: 0.4, type: "spring", stiffness: 120, damping: 14 }}
-                  className={`absolute text-[80px] md:text-[110px] font-black tabular-nums drop-shadow-lg ${MODE_COLORS[mode]}`}
+                  className={`absolute text-[60px] sm:text-[80px] md:text-[110px] font-black tabular-nums drop-shadow-lg ${MODE_COLORS[mode]}`}
                 >
                   {formattedM}
                 </motion.span>
@@ -395,13 +395,13 @@ export default function FocusPage() {
           </div>
 
           <div className="flex flex-col items-center justify-center pb-6">
-            <span className={`text-5xl md:text-7xl font-bold animate-pulse ${MODE_COLORS[mode]}`}>:</span>
+            <span className={`text-4xl sm:text-5xl md:text-7xl font-bold animate-pulse ${MODE_COLORS[mode]}`}>:</span>
           </div>
 
           {/* Seconds Flip Card */}
           <div className="flex flex-col items-center">
             <div 
-              className="relative bg-[#111] border border-gray-800 rounded-xl overflow-hidden shadow-2xl w-32 h-40 md:w-40 md:h-48 flex items-center justify-center"
+              className="relative bg-[#111] border border-gray-800 rounded-xl overflow-hidden shadow-2xl w-24 h-32 sm:w-32 sm:h-40 md:w-40 md:h-48 flex items-center justify-center"
               style={{ perspective: 1000 }}
             >
               <AnimatePresence mode="popLayout">
@@ -411,7 +411,7 @@ export default function FocusPage() {
                   animate={{ rotateX: 0, y: 0, opacity: 1 }}
                   exit={{ rotateX: 90, y: 20, opacity: 0 }}
                   transition={{ duration: 0.4, type: "spring", stiffness: 120, damping: 14 }}
-                  className={`absolute text-[80px] md:text-[110px] font-black tabular-nums drop-shadow-lg ${MODE_COLORS[mode]}`}
+                  className={`absolute text-[60px] sm:text-[80px] md:text-[110px] font-black tabular-nums drop-shadow-lg ${MODE_COLORS[mode]}`}
                 >
                   {formattedS}
                 </motion.span>

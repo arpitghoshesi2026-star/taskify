@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Bell, Moon, Sun, Sparkles } from "lucide-react";
+import { Search, Bell, Moon, Sun, Sparkles, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -17,8 +17,16 @@ export function TopNav() {
   }, []);
 
   return (
-    <header className="h-20 w-full border-b border-gray-200 dark:border-glass-border bg-white/50 dark:bg-glass-dark/50 backdrop-blur-xl flex items-center justify-between px-6 md:px-10 sticky top-0 z-30">
+    <header className="h-20 w-full border-b border-gray-200 dark:border-glass-border bg-white/50 dark:bg-glass-dark/50 backdrop-blur-xl flex items-center justify-between px-4 sm:px-6 md:px-10 sticky top-0 z-30">
       
+      {/* Mobile Hamburger Menu */}
+      <button 
+        className="md:hidden mr-4 p-2.5 rounded-lg text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+        onClick={() => document.dispatchEvent(new CustomEvent('toggle-sidebar'))}
+      >
+        <Menu size={24} />
+      </button>
+
       {/* Search Bar (Click to open Spotlight) */}
       <div className="flex-1 max-w-xl hidden md:block" onClick={() => document.dispatchEvent(new CustomEvent('open-search'))}>
         <div className="relative group cursor-pointer">

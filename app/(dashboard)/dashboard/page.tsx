@@ -78,13 +78,13 @@ export default function DashboardPage() {
             <CalendarIcon size={16} />
             <span className="text-sm font-medium uppercase tracking-wider">{currentDate}</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tighter leading-tight drop-shadow-sm dark:drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tighter leading-tight drop-shadow-sm dark:drop-shadow-lg">
             {greeting}, <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 dark:from-neon-purple dark:to-neon-cyan">
               Arpit
             </span> {greetingEmoji}
           </h1>
-          <p className="text-gray-500 dark:text-gray-400 mt-6 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-md">
+          <p className="text-gray-500 dark:text-gray-400 mt-4 md:mt-6 text-base sm:text-lg md:text-xl max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-md px-4">
             {subGreeting}
           </p>
         </motion.div>

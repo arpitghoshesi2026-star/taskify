@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -33,6 +33,12 @@ export function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleToggle = () => setIsOpen((prev) => !prev);
+    document.addEventListener('toggle-sidebar', handleToggle);
+    return () => document.removeEventListener('toggle-sidebar', handleToggle);
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -70,13 +76,13 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Mobile Toggle */}
-      <button 
-        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-glass-dark border border-glass-border rounded-lg text-white"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div 
+          className="md:hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
 
       {/* Sidebar Container */}
       <motion.aside

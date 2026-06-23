@@ -19,7 +19,7 @@ export default function DashboardLayout({
         
         <div className="flex-1 flex flex-col min-w-0 z-10 relative h-screen">
           <TopNav />
-          <main className="flex-1 overflow-y-auto scroll-smooth no-scrollbar p-6 md:p-10 relative">
+          <main className="flex-1 overflow-y-auto scroll-smooth no-scrollbar p-4 sm:p-6 md:p-8 lg:p-10 relative">
             <div className="max-w-7xl mx-auto min-h-full">
               {children}
             </div>

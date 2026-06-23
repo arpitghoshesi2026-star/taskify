@@ -66,13 +66,13 @@ export function AuthForm() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto z-10 relative">
+    <div className="w-full max-w-md mx-auto z-10 relative px-4 sm:px-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 mt-4 sm:mt-0">
           <motion.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -83,11 +83,11 @@ export function AuthForm() {
               <img src="/logo.png" alt="Taskify Logo" className="w-full h-full object-cover" />
             </div>
           </motion.div>
-          <h1 className="text-3xl font-bold text-white mb-2 text-glow">Welcome to Taskify</h1>
-          <p className="text-gray-400">Log in to your premium workspace</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 text-glow">Welcome to Taskify</h1>
+          <p className="text-sm sm:text-base text-gray-400">Log in to your premium workspace</p>
         </div>
 
-        <GlassCard glow className="p-8 bg-black/60 border-white/10 backdrop-blur-xl shadow-2xl">
+        <GlassCard glow className="p-6 sm:p-8 bg-black/60 border-white/10 backdrop-blur-xl shadow-2xl">
           {error && (
             <motion.div 
               initial={{ opacity: 0, height: 0 }} 
