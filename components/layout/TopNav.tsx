@@ -13,7 +13,15 @@ export function TopNav() {
 
   useEffect(() => {
     setMounted(true);
-    account.get().then((u) => setUserName(u.name.charAt(0).toUpperCase())).catch(() => {});
+    account.get().then((u) => {
+      if (u.name) {
+        setUserName(u.name.charAt(0).toUpperCase());
+      } else if (u.email) {
+        setUserName(u.email.charAt(0).toUpperCase());
+      } else {
+        setUserName("U");
+      }
+    }).catch(() => {});
   }, []);
 
   return (

@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { User, Mail, CalendarDays, Edit3, Shield, LogOut } from "lucide-react";
+import { User, Mail, CalendarDays, Edit3, Shield, LogOut, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { account, appwriteConfig } from "@/lib/appwrite/client";
 import { useRouter } from "next/navigation";
 
@@ -51,6 +52,10 @@ export default function ProfilePage() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
       >
+        <Link href="/dashboard" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-neon-cyan transition-colors mb-6">
+          <ArrowLeft size={16} className="mr-2" />
+          Back to Dashboard
+        </Link>
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Your Profile</h1>
           <button 

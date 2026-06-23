@@ -41,6 +41,9 @@ export default function FocusPage() {
 
   const playAlarm = useCallback(() => {
     try {
+      const savedSound = localStorage.getItem("taskify_sound");
+      if (savedSound === "false") return; // Respect user settings
+
       const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
       
       const playTone = (freq: number, startTime: number, duration: number) => {

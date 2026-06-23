@@ -200,23 +200,8 @@ export default function TasksPage() {
       {/* Toolbar (Search & Filters) */}
       <div className="flex flex-col gap-4 sticky top-0 z-20 py-2">
         <div className="flex flex-col md:flex-row justify-between gap-4">
-          {/* Task Progress Indicator instead of Search */}
-          <div className="flex-1 max-w-md bg-white/60 dark:bg-black/40 backdrop-blur-md border border-gray-200 dark:border-glass-border rounded-xl px-4 py-2 flex flex-col justify-center shadow-sm">
-            <div className="flex justify-between items-center mb-1">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Overall Progress</span>
-              <span className="text-xs font-bold text-neon-purple">
-                {tasks.length > 0 ? Math.round((tasks.filter(t => t.completed).length / tasks.length) * 100) : 0}%
-              </span>
-            </div>
-            <div className="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5 overflow-hidden">
-              <motion.div 
-                className="h-full bg-neon-purple rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${tasks.length > 0 ? (tasks.filter(t => t.completed).length / tasks.length) * 100 : 0}%` }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              />
-            </div>
-          </div>
+          {/* Left Side Empty for alignment or future search */}
+          <div className="flex-1"></div>
 
           <div className="relative">
             <select className="appearance-none bg-white/60 dark:bg-black/40 backdrop-blur-md border border-gray-200 dark:border-glass-border rounded-xl pl-10 pr-10 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-1 focus:ring-neon-purple/50 cursor-pointer shadow-sm">

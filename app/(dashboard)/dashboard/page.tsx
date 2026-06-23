@@ -13,6 +13,7 @@ export default function DashboardPage() {
   const [greeting, setGreeting] = useState("Hello");
   const [subGreeting, setSubGreeting] = useState("Let's get things done.");
   const [greetingEmoji, setGreetingEmoji] = useState("👋");
+  const [userName, setUserName] = useState("User");
 
   const emojis = ["👋", "✨", "🚀", "🔥", "💪", "🌟", "🎉"];
 
@@ -20,6 +21,10 @@ export default function DashboardPage() {
     setCurrentDate(new Date().toLocaleDateString('en-US', { 
       weekday: 'long', month: 'long', day: 'numeric' 
     }));
+
+    // Pick a random emoji
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    setGreetingEmoji(randomEmoji);
 
     const currentHour = new Date().getHours();
     if (currentHour >= 5 && currentHour < 12) {
@@ -35,10 +40,18 @@ export default function DashboardPage() {
       setGreeting("Good Night");
       setSubGreeting("Rest up. Tomorrow is a new day of opportunities.");
     }
-    
-    // Pick a random emoji
-    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    setGreetingEmoji(randomEmoji);
+    // Fetch actual user name
+    account.get()
+      .then((u) => {
+        if (u.name) {
+          setUserName(u.name.split(' ')[0]); // Get first name
+        } else if (u.email) {
+          setUserName(u.email.split('@')[0]); // Fallback to email prefix
+        } else {
+          setUserName("User");
+        }
+      })
+      .catch(() => setUserName("User"));
   }, []);
 
   // For 3D Background Scroll Animation
@@ -81,7 +94,7 @@ export default function DashboardPage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tighter leading-tight drop-shadow-sm dark:drop-shadow-lg">
             {greeting}, <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 dark:from-neon-purple dark:to-neon-cyan">
-              Arpit
+              {userName}
             </span> {greetingEmoji}
           </h1>
           <p className="text-gray-500 dark:text-gray-400 mt-4 md:mt-6 text-base sm:text-lg md:text-xl max-w-2xl mx-auto drop-shadow-sm dark:drop-shadow-md px-4">

@@ -56,7 +56,7 @@ export function Sidebar() {
     const Icon = item.icon;
 
     return (
-      <Link href={item.href} className="block w-full">
+      <Link href={item.href} className="block w-full" onClick={() => setIsOpen(false)}>
         <div className={cn(
           "flex items-center px-4 py-3 mb-1 rounded-xl transition-all duration-300 group relative",
           isActive ? "bg-black/5 dark:bg-white/10 text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
@@ -94,7 +94,7 @@ export function Sidebar() {
         )}
       >
         <div className="p-6">
-          <Link href="/dashboard" className="flex items-center group">
+          <Link href="/dashboard" className="flex items-center group" onClick={() => setIsOpen(false)}>
             <div className="w-10 h-10 rounded-xl flex items-center justify-center mr-3 shadow-glow transition-transform group-hover:scale-105 overflow-hidden bg-black/20">
               <img src="/logo.png" alt="Taskify Logo" className="w-full h-full object-cover" />
             </div>

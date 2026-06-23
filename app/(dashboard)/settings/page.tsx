@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Moon, Sun, Bell, Volume2, ShieldAlert, Trash2, Settings as SettingsIcon } from "lucide-react";
+import Link from "next/link";
+import { Moon, Sun, Bell, Volume2, ShieldAlert, Trash2, Settings as SettingsIcon, ArrowLeft } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useTaskContext } from "@/context/TaskContext";
 
@@ -61,6 +62,10 @@ export default function SettingsPage() {
       
       {/* Header */}
       <div>
+        <Link href="/dashboard" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-neon-cyan transition-colors mb-4">
+          <ArrowLeft size={16} className="mr-2" />
+          Back to Dashboard
+        </Link>
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight flex items-center gap-4">
           <SettingsIcon className="text-neon-cyan" size={40} />
           Settings
