@@ -7,6 +7,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useTaskContext } from "@/context/TaskContext";
+import { account } from "@/lib/appwrite/client";
 
 export default function DashboardPage() {
   const [currentDate, setCurrentDate] = useState("");
