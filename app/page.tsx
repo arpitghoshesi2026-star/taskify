@@ -10,8 +10,8 @@ export default function AuthenticationPage() {
         <AbstractBackground />
       </div>
 
-      {/* Right Side - Form with Rainbow Mesh Background */}
-      <div className="relative z-10 w-full md:w-1/2 min-h-screen flex items-center justify-center bg-mesh">
+      {/* Right Side - Form with subtle background */}
+      <div className="relative z-10 w-full md:w-1/2 min-h-screen flex items-center justify-center bg-gray-100/50 dark:bg-black/50">
         <div className="w-full max-w-md p-6">
           <AuthForm />
         </div>
