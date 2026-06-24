@@ -319,7 +319,7 @@ export default function FocusPage() {
       <GlassCard className="w-full max-w-md p-6 flex flex-col items-center relative overflow-hidden shadow-2xl bg-white/40 dark:bg-black/40 border-white/40 dark:border-white/10 backdrop-blur-3xl">
         
         {/* Mode Toggles */}
-        <div className="flex bg-black/5 dark:bg-black/40 p-1 rounded-full mb-10 border border-gray-200 dark:border-white/5 flex-wrap justify-center gap-1">
+        <div className="flex w-full bg-black/5 dark:bg-black/40 p-1 rounded-3xl mb-10 border border-gray-200 dark:border-white/5 flex-wrap justify-center gap-1">
           {(['focus', 'shortBreak', 'longBreak', 'custom'] as TimerMode[]).map((m) => (
             <button
               key={m}
@@ -327,7 +327,7 @@ export default function FocusPage() {
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 mode === m 
                   ? 'bg-white dark:bg-[#1f1f3a] text-gray-900 dark:text-white shadow-sm' 
-                  : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'
+                  : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300'
               }`}
             >
               {m === 'focus' ? 'Focus' : m === 'shortBreak' ? 'Short Break' : m === 'longBreak' ? 'Long Break' : 'Custom'}
@@ -369,7 +369,7 @@ export default function FocusPage() {
         )}
 
         {/* Retro Flip Clock UI */}
-        <div className="flex items-center gap-4 md:gap-6 mb-8 select-none">
+        <div className="flex items-center justify-center w-full gap-4 md:gap-6 mb-8 select-none">
           {/* Minutes Flip Card */}
           <div className="flex flex-col items-center">
             <div 
@@ -394,7 +394,7 @@ export default function FocusPage() {
               {/* Reflection */}
               <div className="absolute top-0 left-0 right-0 bottom-1/2 bg-white/5 pointer-events-none z-10" />
             </div>
-            <span className="text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold mt-4">Minutes</span>
+            <span className="text-gray-700 dark:text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold mt-4">Minutes</span>
           </div>
 
           <div className="flex flex-col items-center justify-center pb-6">
@@ -425,12 +425,12 @@ export default function FocusPage() {
               {/* Reflection */}
               <div className="absolute top-0 left-0 right-0 bottom-1/2 bg-white/5 pointer-events-none z-10" />
             </div>
-            <span className="text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold mt-4">Seconds</span>
+            <span className="text-gray-700 dark:text-gray-500 uppercase tracking-[0.3em] text-[10px] font-bold mt-4">Seconds</span>
           </div>
         </div>
 
         {/* Controls */}
-        <div className="flex items-center gap-6 mt-8">
+        <div className="flex items-center justify-center w-full gap-6 mt-8">
           <button 
             onClick={resetTimer}
             className="w-12 h-12 rounded-full flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/10 transition-all hover:scale-105 active:scale-95 shadow-sm"
@@ -451,10 +451,10 @@ export default function FocusPage() {
         </div>
       </GlassCard>
 
-      {/* Session Counter */}
-      <div className="mt-6 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 font-medium">
-        <Flame size={14} className={sessionCount > 0 ? "text-orange-500" : ""} />
-        <span>{sessionCount} Focus {sessionCount === 1 ? 'Session' : 'Sessions'} Completed</span>
+      {/* Stats */}
+      <div className="mt-8 text-center text-gray-600 dark:text-gray-400 text-sm flex items-center justify-center gap-2">
+        <Flame size={16} className="text-orange-500" />
+        <span className="font-medium">{sessionCount} Focus {sessionCount === 1 ? 'Session' : 'Sessions'} Completed</span>
       </div>
 
     </div>
