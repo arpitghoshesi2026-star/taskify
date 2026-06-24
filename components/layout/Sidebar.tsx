@@ -85,9 +85,7 @@ export function Sidebar() {
       )}
 
       {/* Sidebar Container */}
-      <motion.aside
-        initial={{ x: -300 }}
-        animate={{ x: isOpen ? 0 : 0 }}
+      <aside
         className={cn(
           "fixed md:relative z-40 w-64 h-full bg-white/50 dark:bg-glass-dark border-r border-gray-200 dark:border-glass-border backdrop-blur-2xl flex flex-col transition-transform duration-300 ease-in-out md:translate-x-0",
           !isOpen && "-translate-x-full"
@@ -126,15 +124,8 @@ export function Sidebar() {
           </button>
 
         </div>
-      </motion.aside>
+      </aside>
 
-      {/* Mobile Backdrop */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 md:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
     </>
   );
 }
